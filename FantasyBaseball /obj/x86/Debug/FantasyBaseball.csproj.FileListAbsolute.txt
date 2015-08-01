@@ -1,0 +1,28 @@
+H:\FantasyBaseball\FantasyBaseball\bin\Debug\FantasyBaseball.exe
+H:\FantasyBaseball\FantasyBaseball\bin\Debug\FantasyBaseball.pdb
+H:\FantasyBaseball\FantasyBaseball\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\FantasyBaseball\FantasyBaseball\obj\x86\Debug\FantasyBaseball.Form1.resources
+H:\FantasyBaseball\FantasyBaseball\obj\x86\Debug\FantasyBaseball.Properties.Resources.resources
+H:\FantasyBaseball\FantasyBaseball\obj\x86\Debug\GenerateResource.read.1.tlog
+H:\FantasyBaseball\FantasyBaseball\obj\x86\Debug\GenerateResource.write.1.tlog
+H:\FantasyBaseball\FantasyBaseball\obj\x86\Debug\FantasyBaseball.exe
+H:\FantasyBaseball\FantasyBaseball\obj\x86\Debug\FantasyBaseball.pdb
+F:\FantasyBaseball\FantasyBaseball\obj\x86\Debug\FantasyBaseball.exe
+F:\FantasyBaseball\FantasyBaseball\obj\x86\Debug\FantasyBaseball.pdb
+H:\FantasyBaseball\FantasyBaseball\obj\x86\Debug\FantasyBaseball.Form3.resources
+H:\FantasyBaseball\FantasyBaseball\bin\Debug\FantasyBaseball.exe.config
+H:\FantasyBaseball\FantasyBaseball\bin\Debug\db _with_extra_field.mdf
+H:\FantasyBaseball\FantasyBaseball\bin\Debug\db _with_extra_field_log.ldf
+C:\Users\CMK\Desktop\erin int\FantasyBaseball\FantasyBaseball\FantasyBaseball\bin\Debug\FantasyBaseball.exe.config
+C:\Users\CMK\Desktop\erin int\FantasyBaseball\FantasyBaseball\FantasyBaseball\obj\x86\Debug\FantasyBaseball.exe
+C:\Users\CMK\Desktop\erin int\FantasyBaseball\FantasyBaseball\FantasyBaseball\obj\x86\Debug\FantasyBaseball.pdb
+C:\Users\CMK\Desktop\erin int\FantasyBaseball\FantasyBaseball\FantasyBaseball\bin\Debug\db _with_extra_field.mdf
+C:\Users\CMK\Desktop\erin int\FantasyBaseball\FantasyBaseball\FantasyBaseball\bin\Debug\db _with_extra_field_log.ldf
+C:\Users\CMK\Desktop\erin int\FantasyBaseball\FantasyBaseball\FantasyBaseball\bin\Debug\FantasyBaseball.exe
+C:\Users\CMK\Desktop\erin int\FantasyBaseball\FantasyBaseball\FantasyBaseball\bin\Debug\FantasyBaseball.pdb
+C:\Users\CMK\Desktop\erin int\FantasyBaseball\FantasyBaseball\FantasyBaseball\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\CMK\Desktop\erin int\FantasyBaseball\FantasyBaseball\FantasyBaseball\obj\x86\Debug\FantasyBaseball.Form1.resources
+C:\Users\CMK\Desktop\erin int\FantasyBaseball\FantasyBaseball\FantasyBaseball\obj\x86\Debug\FantasyBaseball.Form3.resources
+C:\Users\CMK\Desktop\erin int\FantasyBaseball\FantasyBaseball\FantasyBaseball\obj\x86\Debug\FantasyBaseball.Properties.Resources.resources
+C:\Users\CMK\Desktop\erin int\FantasyBaseball\FantasyBaseball\FantasyBaseball\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\CMK\Desktop\erin int\FantasyBaseball\FantasyBaseball\FantasyBaseball\obj\x86\Debug\GenerateResource.write.1.tlog
