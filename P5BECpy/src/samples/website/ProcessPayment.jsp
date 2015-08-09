@@ -128,7 +128,7 @@ localStorage.setItem("CustomerEmail", cEmail);
                   window.console.log(response);
               });
   
-              new OffAmazonPayments.Widgets.Wallet({sellerId: 'A2TU3GQJOHSGWZ',
+              new OffAmazonPayments.Widgets.Wallet({sellerId 
                 onOrderReferenceCreate: function (orderReference) {
                   var ORID = document.getElementById("ORID");
              
