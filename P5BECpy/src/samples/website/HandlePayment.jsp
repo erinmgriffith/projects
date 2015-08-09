@@ -20,7 +20,7 @@
 <%@ taglib prefix="fn" 
            uri="http://java.sun.com/jsp/jstl/functions" %>
   <script type='text/javascript' 
-    src='https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js?sellerId=A2TU3GQJOHSGWZ'>
+    src='https://static-na.paym>
   </script>
 <!DOCTYPE html>
 <html>
@@ -55,7 +55,7 @@
         <!-------------*************** Wallet Widget- create and define attributes  ***************--------------->  
         <script>
 
-              new OffAmazonPayments.Widgets.Wallet({sellerId: 'A2TU3GQJOHSGWZ',
+              new Off
                 onOrderReferenceCreate: function (orderReference) {
                   var ORID = document.getElementById("ORID");
                   ORID.value = orderReference.getAmazonOrderReferenceId();
