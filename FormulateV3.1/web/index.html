@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<!--
+    Document   : Index
+    Created on : Mar 25, 2016, 10:20:43 AM
+    Author     : Erin Griffith
+
+Main page contains iframes that target viewgate.html and results.jsp. Has collapsible tool bar on left hand side 
+
+
+-->
+<html>
+    <head>
+        <title>Formulate</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <link href="css/maxcdn.bootstrapcdn.com_bootstrap_3.3.6_css_bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css"/>
+        <link href="css/myStyle.css" rel="stylesheet" type="text/css"/>
+
+        <style>
+            body{
+                background-color: black;
+                overflow: auto;
+            }
+            header{
+                text-align: center;
+/*                position: relative;*/
+                //left:25%;
+                margin: auto;
+                display: flex;
+     width:100%;
+                  height:100%;
+/*                   background-image: url("img/starbckgrnd2.png");*/
+
+            }
+            table{
+                column-width: auto;
+                text-align: center;
+                font-size: 10px;
+            }
+            h3 {
+                position:relative;
+                bottom:20px;
+            }
+            h5{
+                font-weight: bold;
+            }
+            .panel-default>.panel-heading {
+                color: #333;
+                background-color: #00ffff;
+                border-color: #ddd;
+                border-radius: 5px;
+                height: 50px;
+                box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2),
+                    2px 2px 0px 2px rgba(0,0,0,0.2) ;
+            }
+            .panel-group .panel+.panel {
+                margin-top: 15px;
+            }
+            .dropdown{
+                margin-left: 50px;
+                text-align: center;
+                                background-color: #222;
+
+            }
+            .toolDiv{
+                height: auto;
+                width:100%;
+/*                background-color: #111111;*/
+                font-size: 10pt;
+            }
+            toolpanel.ul{
+                overflow: scroll;
+            }
+            #mainGate{
+                border-style: solid;
+                width:100%;
+                height:100%;
+                position: absolute;
+                float: left;
+                margin-right: -300px;
+            
+/*                display: flex;*/
+                padding: 10px;
+                border-radius: 10px;
+                overflow-style: move;
+            }
+            #toolPanel {
+                box-sizing:content-box;
+                min-width: 250px;
+                max-width: 400px;
+/*                min-height: 20px;*/
+                max-height: 700px;
+                background-color: #111111;
+                height:100%;
+                position: relative;
+                float:top;
+                top: -20px;
+                overflow: scroll;
+                border-bottom-right-radius: 15px;
+                display:block;
+            }
+            .panel-group{
+                margin: 10%;
+            }
+            .row{
+                height:800px;
+            }
+            
+          #banner{
+                width:100%;
+                margin-left:0;
+            }
+            
+
+#toolPanel::-webkit-scrollbar {
+    width: 10px;
+}
+#toolPanel::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #ccc;
+}
+#toolPanel::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+#toolPanel::-webkit-scrollbar-thumb:hover {
+	background-color: #aaa;
+}
+
+                         </style>
+  
+    </head>
+
+
+    <body>
+  
+
+        <header>
+            <img id="banner" src="img/banner.png" alt=""/>
+        </header>
+
+        <!-- navigation bar contains dropdown menus-->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid" id="menu">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Main</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Systems <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Mechanics</a></li>
+                            <li><a href="#">Fluids</a></li>
+                            <li><a href="#">Light</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">All Properties <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">A-H </a></li>
+                            <li><a href="#">H-N</a></li>
+                            <li><a href="#">N-Z</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Windows <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>   <a href="#accordion" data-toggle="collapse">Tools Panel</a>
+                            </li>
+                            <li><a href="#">Systems View</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Help <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">User Guide</a></li>
+                            <li><a href="#">Wiki</a></li>
+                        </ul>
+                    <li >
+                </ul>
+            </div>
+        </nav>
+
+
+        <!-- row contains two bootstrap columns- a side panel of sm-3, and display of lg-9-->               
+<!--        <div class="row" >-->
+            <!-- Accordion Side bar-->
+            <div class="col-lg-2" id="toolPanel">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                    <!-- targeted from results to receive information on selected property-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <h3>  Property Info </h3>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <div id="propertyDescription" class="toolDiv">
+                                    Click on a property node to activate.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Glossary of abbreviations-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <h3>  Abbreviations </h3>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <div class="toolDiv">
+                                    <ul>
+                                        <li>a = acceleration  </li>
+                                        <li> F = force </li>
+                                        <li>f = frequency </li>
+                                        <li>h = height </li>
+                                        <li>J = impulse </li>
+                                        <li>K = kinetic energy</li>
+                                        <li>k = spring constant</li>
+                                        <li>A = length</li>
+                                        <li>m = mass</li>
+                                        <li>N = normal force</li>
+                                        <li>P = power</li>
+                                        <li>p = momentum</li>
+                                        <li>r = radius or distance</li>
+                                        <li>T = period</li>
+                                        <li>t = time</li>
+                                        <li>U = potential energy</li>
+                                        <li>u = velocity or speed</li>
+                                        <li>W = work done on a system</li>
+                                        <li>x = position</li>
+                                        <li>m = coefficient of friction</li>
+                                        <li>q = angle</li>
+                                        <li>t = torque</li>
+                                    </ul>                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Glossary of base and derived SI units of measurement-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <h3>  Units </h3>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <div class="toolDiv">
+                                    <h5> Base Units </h5>
+                                    <table border=".5" >
+                                        <thead>
+                                            <tr>
+                                                <th>&nbsp Quantity &nbsp</th>
+                                                <th>&nbsp Name &nbsp</th>
+                                                <th> &nbsp Symbol &nbsp</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>&nbsp length &nbsp</td>
+                                                <td> &nbsp meter &nbsp</td>
+                                                <td> m </td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp time &nbsp</td>
+                                                <td>&nbsp second &nbsp</td>
+                                                <td> s </td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp mass &nbsp</td>
+                                                <td>&nbsp kilogram &nbsp</td>
+                                                <td>kg</td>
+                                            </tr>
+                                            <tr>
+                                                <td> &nbsp amount &nbsp</td>
+                                                <td> &nbsp mole &nbsp</td>
+                                                <td>&nbsp mol &nbsp</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp temperature &nbsp</td>
+                                                <td>&nbsp Kelvin &nbsp</td>
+                                                <td> K </td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp current &nbsp</td>
+                                                <td>&nbsp Ampere &nbsp</td>
+                                                <td>A</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp luminosity &nbsp</td>
+                                                <td>&nbsp candela &nbsp</td>
+                                                <td>cd</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <h5> Derived Units </h5>
+                                    <table border=".5" >
+                                        <thead>
+                                            <tr>
+                                                <th>&nbsp Quantity &nbsp</th>
+                                                <th>&nbsp Name &nbsp</th>
+                                                <th> &nbsp Symbol &nbsp</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>&nbsp area &nbsp</td>
+                                                <td> &nbsp square meter &nbsp</td>
+                                                <td> m&sup2 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp volume &nbsp</td>
+                                                <td>&nbsp cubic meter &nbsp</td>
+                                                <td> m&sup3 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp velocity &nbsp</td>
+                                                <td>&nbsp meter per second &nbsp</td>
+                                                <td> m/s</td>
+                                            </tr>
+                                            <tr>
+                                                <td> &nbsp acceleration &nbsp</td>
+                                                <td> &nbsp meter per second squared &nbsp</td>
+                                                <td>&nbsp m/s&sup2 &nbsp</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp wave number &nbsp</td>
+                                                <td>&nbsp reciprocal meter &nbsp</td>
+                                                <td> m -&sup1 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp specific volume &nbsp</td>
+                                                <td>&nbsp kilogram per cubic meter &nbsp</td>
+                                                <td>m&sup3/kg</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp current density &nbsp</td>
+                                                <td>&nbsp ampere per square meter &nbsp</td>
+                                                <td>A/m&sup2</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp magnetic field strength &nbsp</td>
+                                                <td>&nbsp ampere per meter &nbsp</td>
+                                                <td>A/m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp substance concentration &nbsp</td>
+                                                <td>&nbsp mole per cubic meter &nbsp</td>
+                                                <td>mol/m&sup3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp luminance &nbsp</td>
+                                                <td>&nbsp candela per square meter &nbsp</td>
+                                                <td>cd/m&sup2</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- commonly used mathematical constants-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <h3>  Constants </h3>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                            <div class="panel-body">
+                                <div class="toolDiv">
+                                    <table border=".5" >
+                                        <thead>
+                                            <tr>
+                                                <th>&nbsp Name &nbsp</th>
+                                                <th> &nbsp Formula &nbsp</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>&nbsp proton mass &nbsp</td>
+                                                <td> &nbsp m<sub>p</sub> = 1.67 * 10<sup>-27</sup> kg &nbsp </td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp neutron mass &nbsp</td>
+                                                <td> m<sub>n</sub>= 1.67 * 10<sup>-27</sup> kg  </td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp electron mass &nbsp</td>
+                                                <td> m<sub>e</sub>=9.11 * 10<sup>-27</sup></td>
+                                            </tr>
+                                            <tr>
+                                                <td> &nbsp Avogardo's number &nbsp</td>
+                                                <td>&nbsp N<sub>0</sub>=6.02 *10<sup>-23</sup> mol<sup>-1</sup> &nbsp</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp Universal Gas Constant &nbsp</td>
+                                                <td> R=8.31 J/mol*K </td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp Speed of Light &nbsp</td>
+                                                <td>c = 3.00 * 10<sup> 8</sup> m/s</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp Universal gravitational constant &nbsp</td>
+                                                <td>G=6.67*10<sup>-11</sup> m<sup>3</sup>/kg*s&sup2</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp Acceleration from Gravity &nbsp</td>
+                                                <td> g=9.81 m/s&sup2   </td>
+                                            </tr>
+                                        </tbody>
+                                    </table> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  <!-- end of tool panel-->
+
+
+
+
+            <!-- frame that holds html and jsp with canvas element-->
+            <div class="col-lg-9" id="main">
+                <iframe id="mainGate"  src="ViewGate.html" scrolling="yes">
+                </iframe>
+            </div>
+<!--        </div>-->
+        <!-- end row -->
+    </body>
+</html>
+

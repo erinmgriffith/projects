@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><head>
+	<title>Detecting Mouse Over HTML5 Canvas Lines</title>
+	<style type="text/css">
+		body { text-align:center; margin:2em 4em; background:#ddd; color:#000; }
+		canvas { display:block; margin:1em auto; background:#fff; border:1px solid #ccc }
+	</style>
+</head><body>
+	<p>Detecting if the mouse is over a non-transparent region in a snapshot of an HTML5 Canvas</p>
+	<canvas width="600" height="400"></canvas>
+	<p>Pixel under mouse: <span id="out">?</span></p>
+	<p>Written to support <a href="http://stackoverflow.com/questions/8184452/how-to-select-lines-that-are-drawn-on-a-html5-canvas">this Stack Overflow question</a>. Copyright &copy;2011 <a href="mailto:!@phrogz.net">Gavin Kistner</a></p> 
+	<script type="text/javascript">
+		// Takes a snapshot of the canvas and return the rgba of the pixel
+		// under the mouse whenever the mouse moves.
+	var a={}, b={}, c={};
+a.x = 100;
+a.y = 100;
+b.x = 200;
+b.y = 200;
+c.x = e.screenX
+c.y = e.screeny
+
+if(isBetween(a,b,c, 5)){
+   console.log(true);
+}
+
+isBetween = function(a,b,c, tolerance){
+
+    //test if the point c is inside a pre-defined distance (tolerance) from the line
+    var distance = Math.abs((c.y - b.y)*a.x - (c.x - b.x)*a.y + c.x*b.y - c.y*b.x) / Math.sqrt(Math.pow((c.y-b.y),2) + Math.pow((c.x-b.x),2));
+    if (distance > tolerance){ return false; }
+
+    //test if the point c is between a and b
+    var dotproduct = (c.x - a.x) * (b.x - a.x) + (c.y - a.y)*(b.y - a.y)
+    if(dotproduct < 0){ return false; }
+
+    var squaredlengthba = (b.x - a.x)*(b.x - a.x) + (b.y - a.y)*(b.y - a.y);
+    if(dotproduct > squaredlengthba){ return false; }
+
+    return true;
+};
+	</script>
+</body></html>

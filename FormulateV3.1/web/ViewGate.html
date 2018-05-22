@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+    Document   : ViewGate
+    Created on : Mar 25, 2016, 10:20:43 AM
+    Author     : Erin Griffith
+
+Page is mainly a hub and gateway with buttons that launch controller servlet
+
+-->
+<html>
+    <head>
+        <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/jquery-ui.js" type="text/javascript"></script>
+        <script src="js/jquery-1.12.3.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <link href="css/myStyle.css" rel="stylesheet" type="text/css"/>
+        <link href="css/maxcdn.bootstrapcdn.com_bootstrap_3.3.6_css_bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/jscrollpane.css" rel="stylesheet" type="text/css"/>
+        <link href="css/jquery-ui.theme.css" rel="stylesheet" type="text/css"/>
+        <link href="css/jquery-ui.structure.css" rel="stylesheet" type="text/css"/>
+        <link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css"/>
+        <link href="css/myStyle.css" rel="stylesheet" type="text/css"/>
+
+
+        <title>View Gateway</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <style>
+            body{
+                background-color: white;
+                overflow:scroll;
+                overflow-style: move;
+            }
+            a{
+                text-align: center;
+                font-style: normal;
+                color: black;
+            }        
+            #imgBorder{
+                border-style: solid;
+                border-width: 2px;
+                border-color: black;
+                position:relative;
+                float:left;
+            }
+            #systems{
+                width: 65%;
+                height: 90%;
+                position: relative;
+                float: left;
+                left: 15%;
+                border-style: none;
+                border-width: 2px;
+                border-color: black;
+                display: box;
+                top:100px;
+            }
+            #S1Gate{
+                border-style: solid;
+                border-width: 2px;
+                border-color: black;
+                background:url(./img/newt.png) no-repeat;
+                cursor:pointer;
+                height: 230px;
+                width: 230px;
+                position: relative;
+                float:left;
+            }
+            #S2Gate{
+                border-style: solid;
+                border-width: 2px;
+                border-color: black;
+                background:url(./img/light2.png) no-repeat;
+                cursor:pointer;
+                width:230px;
+                height:230px;
+                position: relative;
+                left: 35%;
+            }
+            #S3Gate{
+                border-style: solid;
+                border-width: 2px;
+                border-color: black;
+                object-position:left;
+                background:url(./img/fluid3.png) no-repeat;
+                cursor:pointer;
+                width:230px;
+                height:230px;
+                position: relative;
+                left: 35%;
+            }
+
+
+        </style>
+ <script type="text/javascript">
+  $(document).ready(function() {
+    window.document.forms[0].submit();
+  });
+</script>
+    </head>
+    <body>
+
+<!--Gate buttons notify the controller servlet to begin the process of forming the model that represents the specified system-->
+        <div id="systems" >
+            <form action="SystemController"  method="POST">       
+                <div id="s1Frame" class="SystemFrames"> 
+                    <input type="submit" id="S1Gate" class="img-circle" value="" name="Param1" />
+                </div>
+            </form>
+<!--            <form action="SystemController" method="POST">     
+                <div id="s2Frame" class="SystemFrames"> 
+                    <input type="submit" class="img-circle" id="S2Gate" value="" name="Param2" />
+                  </div>
+            </form>
+            <form action="SystemController" method="POST">  
+                <div id="s3Frame" class="SystemFrames"><input type="submit" class="img-circle" id="S3Gate" value="" name="Param3" />
+                     </div>
+            </form>
+        </div>-->
+    </body>
+</html>

@@ -1,0 +1,57 @@
+
+
+
+
+header{
+    background-color:#000000 ;
+   
+
+display: flex;
+
+}
+#banner{
+    width:35%;
+height:35%;
+}
+
+h3{
+    text-align: center;
+}
+ol{
+    position: relative;
+    float:left;
+}
+
+iFrame {
+    display:flex;
+border-radius: 10px;
+    height: 100%;
+    width:100%;
+
+}
+.embedded{
+    width:200px;
+    height:200px;
+    background-color: red;
+}
+
+
+#main {
+    height:700px;
+
+    font-size: 30pt;
+    text-align: center;
+}
+.values{
+    position: relative;
+    float: left;
+    margin:25px;
+    font-size: 11pt;
+
+}
+#menu {
+    margin-bottom: 0px;
+    display: flex;
+    position: relative;
+   left: 30%;
+}
