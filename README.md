@@ -30,7 +30,8 @@ weekday, day of month, day, and date. For example- Wednesday, the 18th of August
 
 3. P5BEcpy- Written primarily in java, with portions of JSP, javascript, and html. Portions of the front and back end of a prototype for a customized payment system that would interface with the web and Amazon payment, and web services servers. Includes web pages, servlets, no SQL database, membership login, purchase tracking, and page redirection with change of purchase status.
 
-4. Thats it for now. More to come.
+4. Formulate- Java web app. An interactive network visualization of a relational database composed of formulas found in the physical sciences. Allows user to explore relationships between physical properties and conceptualize problem-solving mechanisms in the physical sciences. Includes website interface created using html, css, and vanilla javascript on canvas API for interactive elements. JSP and Java beans communicate to backend end query and sorting classes written in Java. 
+  
 
-
+5. Polished Plum- original hand-coded Wordpress Theme with original design and custom graphical elements.
 *
